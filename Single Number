@@ -1,0 +1,21 @@
+public class Solution {
+    // DO NOT MODIFY THE ARGUMENTS WITH "final" PREFIX. IT IS READ ONLY
+    public int singleNumber(final int[] A) {
+        /*int x=A[0];
+        for(int i=1;i<A.length;i++){
+            x^=A[i];
+        }*/
+        
+        /* anything xor with 0 results in same number
+        1^0=1
+        0^0=0
+        */
+        
+        int x=0;
+        for(int a:A)
+        {
+            x^=a;
+        }
+        return x;
+    }
+}

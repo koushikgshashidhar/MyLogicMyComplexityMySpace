@@ -1,0 +1,35 @@
+/*  public class Solution {
+    public int[] solve(int[] A) {
+
+        int N = A.length;
+
+        int firstGreatest = Integer.MIN_VALUE;
+        int secondGreatest = Integer.MIN_VALUE;
+        for(int i = 0; i < N; i++){
+            if(A[i] > firstGreatest){
+                secondGreatest = firstGreatest;
+                firstGreatest = A[i];
+            }
+            else if(A[i] > secondGreatest){
+                secondGreatest = A[i];
+            }
+        }
+        int cnt=0;    
+        for(int i = 0; i < N; i++){
+            if(A[i] != secondGreatest && A[i]!= firstGreatest){
+
+                cnt++;
+            }
+        }
+        int []B=new int[cnt];
+        int x=0;
+        for(int i = 0; i < N; i++){
+            if(A[i] != secondGreatest && A[i]!= firstGreatest){
+                B[x]=A[i];
+                x++;
+            }
+        }
+        return B;
+        
+    }
+}*/

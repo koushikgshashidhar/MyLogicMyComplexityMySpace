@@ -1,0 +1,68 @@
+public class Solution {
+    public String addBinary(String A, String B) {
+      
+      /*
+      // issue Number format exception
+      // 1st approach Taking stdlib  
+      //Read numbers in decimal(binary converted to decimal)
+      
+      // issue is due to overflow
+        Integer a=Integer.parseInt(A,2);
+        Integer b=Integer.parseInt(B,2);
+        
+        //Add the number
+        Integer c=a+b;
+        
+        //return sum in binary
+        return Integer.toBinaryString(c);
+        */
+     
+      
+     
+   //  2nd approach 
+     
+     //take length=max(A,B)
+     int len=(A.length()>B.length())?A.length():B.length();
+      
+    
+      int i=0,x,y;
+       int sum,cary=0;
+       String s="";
+       
+       //loop and digit by digit 
+       while(i<len){
+           //1st bit
+           if(i<A.length())
+           x=Integer.parseInt(String.valueOf(A.charAt(A.length()-1-i)));  
+           //x=Character.getNumericValue(A.charAt(A.length()-1-i));
+           else
+           x=0;
+          
+           //2nd bit
+           if(i<B.length())
+           y=Character.getNumericValue(B.charAt(B.length()-1-i));
+           else
+           y=0;
+          
+          
+           sum=(x+y+cary)%2;    //Sum bit
+           cary=(x+y+cary)/2;   //cary bit
+        
+           //append sum to string
+           s+=Integer.toString(sum);
+          
+           i++;
+       }
+     
+       if (cary==1)
+       s=s+"1";
+       
+       //reverse the string to get answer
+       StringBuilder sb= new StringBuilder(s);
+       sb.reverse();
+       return sb.toString();
+       
+       
+        
+    }
+}

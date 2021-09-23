@@ -1,0 +1,32 @@
+public class Solution {
+    public int solve(int[] A) {
+        int cnt=0;
+           int min=Integer.MIN_VALUE;
+           int max=Integer.MAX_VALUE;
+           
+           for(int a:A){
+               max=Math.min(a,max);
+               min=Math.max(a,min);
+           }
+         
+             for(int a:A){
+               if(a!=max && a!=min)
+               cnt++;
+           }
+           return cnt;
+        /*Arrays.sort(A);
+        if(A.length<3)
+        return 0;
+        else 
+        {
+        ArrayList <Integer> hs=new ArrayList<Integer>();
+        for(int i=0;i<A.length;i++)
+        {
+            if(A[i]!=A[0] && A[i]!=A[A.length-1])
+               hs.add(A[i]);
+        }
+       return hs.size();
+        }
+        */
+    }
+}

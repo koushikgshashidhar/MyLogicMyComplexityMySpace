@@ -1,0 +1,21 @@
+public class Solution {
+    public int solve(int[] A) {
+        int i;
+        
+        //assign default values
+        int max_even=Integer.MIN_VALUE;
+        int min_odd=Integer.MAX_VALUE;
+        //loop through each element
+        for(i=0;i<A.length;i++)
+        {
+            //if its even and >
+            if((A[i]%2)==0 && A[i]>max_even)
+            max_even=A[i];
+            //if its odd and <
+            if((A[i]%2==1 || A[i]%2 ==-1 )&& A[i]<min_odd)
+            min_odd=A[i];
+            
+        }
+        return (max_even-min_odd);
+    }
+}
